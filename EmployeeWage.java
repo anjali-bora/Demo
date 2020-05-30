@@ -1,20 +1,24 @@
-class EmployeeWage
-{
+class EmployeeWage {
+
+  public static final int Is_Part_Time =1;
+  public static final int Is_Full_Time =2;
+  public static final int Emp_Rate_Per_Hour=20;
+
   public static void main(String[] args)
   {
-    int Is_Full_Time=1;
-    int Is_Part_Time=2;
-
-    int Emp_Rate_Per_Hour=20;
     int emphr=0;
     int empwage=0;
-    double empCheck = Math.floor(Math.random() * 10) % 3;
-    if (empCheck == Is_Part_Time)
+    int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+    switch (empCheck) {
+      case Is_Part_Time:
 	emphr=4;
-    else if (empCheck == Is_Full_Time)
-        emphr=8;
-    else
+         break;
+      case Is_Full_Time:
+         emphr=8;
+	 break;
+      default:
         emphr=0;
+    }
     empwage= emphr * Emp_Rate_Per_Hour;
     System.out.println("Employee Wage = " +empwage);
   }
