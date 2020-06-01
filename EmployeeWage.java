@@ -6,8 +6,8 @@ class EmployeeWage {
   public static final int Num_Of_Working_Days=20;
   public static final int Max_Hours_In_Month=100;
 
-  public static void main(String[] args)
-  {
+  void EmpSalary() {
+
     int emphr=0, TotalWorkingDays=0, TotalEmpHrs=0;
 
     while (TotalEmpHrs <= Max_Hours_In_Month && TotalWorkingDays < Num_Of_Working_Days)
@@ -30,6 +30,12 @@ class EmployeeWage {
       int TotalEmpWage = TotalEmpHrs * Emp_Rate_Per_Hour;
       System.out.println("Total Employee Wage : " +TotalEmpWage);
   }
+   public static void main(String args[]) {
+
+	 System.out.println("Welcome to employee wage program");
+	 EmployeeWage e = new EmployeeWage();
+	 e.EmpSalary();
+   }
 
 }
 
