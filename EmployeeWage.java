@@ -2,11 +2,9 @@ class EmployeeWage {
 
   public static final int Is_Part_Time =1;
   public static final int Is_Full_Time =2;
-  public static final int Emp_Rate_Per_Hour=20;
-  public static final int Num_Of_Working_Days=20;
-  public static final int Max_Hours_In_Month=100;
 
-  void EmpSalary() {
+  public static int ComputeEmpWage(String company, int Emp_Rate_Per_Hour, int Num_Of_Working_Days, int Max_Hours_In_Month) {
+
 
     int emphr=0, TotalWorkingDays=0, TotalEmpHrs=0;
 
@@ -28,13 +26,13 @@ class EmployeeWage {
       System.out.println("Day : "+TotalWorkingDays  +  "Emp Hr : " + emphr);
     }
       int TotalEmpWage = TotalEmpHrs * Emp_Rate_Per_Hour;
-      System.out.println("Total Employee Wage : " +TotalEmpWage);
+      System.out.println("Total Employee Wage for Company : " +company+" is: " +TotalEmpWage);
+         return TotalEmpWage;
   }
    public static void main(String args[]) {
 
-	 System.out.println("Welcome to employee wage program");
-	 EmployeeWage e = new EmployeeWage();
-	 e.EmpSalary();
+	ComputeEmpWage("DMart", 20, 2, 10);
+        ComputeEmpWage("Reliance", 10, 4, 20);
    }
 
 }
